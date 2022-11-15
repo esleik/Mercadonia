@@ -12,6 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.MatteBorder;
+import javax.swing.ImageIcon;
 
 public class vistaPrincipal extends JFrame {
 
@@ -40,8 +41,8 @@ public class vistaPrincipal extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 679, 438);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 255, 255));
-		contentPane.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(255, 102, 102)));
+		contentPane.setBackground(new Color(102, 215, 209));
+		contentPane.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(255, 248, 127)));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -72,8 +73,8 @@ public class vistaPrincipal extends JFrame {
 			}
 		});
 		header.setBorder(null);
-		header.setBackground(new Color(255, 102, 102));
-		header.setBounds(0, 0, 679, 45);
+		header.setBackground(new Color(255, 248, 127));
+		header.setBounds(0, 0, 679, 61);
 		contentPane.add(header);
 		header.setLayout(null);
 		
@@ -94,12 +95,22 @@ public class vistaPrincipal extends JFrame {
 			}
 		});
 		boton_borrar.setBorder(null);
-		boton_borrar.setBackground(new Color(255, 102, 102));
+		boton_borrar.setBackground(new Color(255, 248, 127));
 		boton_borrar.setBounds(632, 0, 47, 45);
 		header.add(boton_borrar);
 		
 		JLabel xTexto = new JLabel("X");
 		xTexto.setFont(new Font("Tahoma", Font.PLAIN, 29));
 		boton_borrar.add(xTexto);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(vistaPrincipal.class.getResource("/imagenes/logomerca.png")));
+		lblNewLabel.setBounds(0, 0, 109, 61);
+		header.add(lblNewLabel);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(96, 22, 537, 39);
+		header.add(panel_1);
+		panel_1.setBackground(new Color(255, 99, 125));
 	}
 }
