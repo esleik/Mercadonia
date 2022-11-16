@@ -109,7 +109,7 @@ public class vistaPrincipal extends JFrame {
 		header.add(lblNewLabel);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(98, 130, 537, 39);
+		panel_1.setBounds(76, 90, 537, 39);
 		contentPane.add(panel_1);
 		panel_1.setBackground(new Color(255, 99, 125));
 	}
