@@ -41,8 +41,13 @@ public class vistaPrincipal extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 679, 438);
 		contentPane = new JPanel();
+
 		contentPane.setBackground(new Color(102, 215, 209));
 		contentPane.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(255, 248, 127)));
+
+		contentPane.setBackground(new Color(255, 255, 255));
+		contentPane.setBorder(new MatteBorder(1, 2, 1, 1, (Color) new Color(255, 102, 102)));
+
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
