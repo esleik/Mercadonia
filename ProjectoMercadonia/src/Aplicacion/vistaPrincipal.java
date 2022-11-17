@@ -13,6 +13,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.MatteBorder;
 import javax.swing.ImageIcon;
+import javax.swing.border.LineBorder;
+import javax.swing.JButton;
 
 public class vistaPrincipal extends JFrame {
 
@@ -39,13 +41,11 @@ public class vistaPrincipal extends JFrame {
 		setUndecorated(true);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 679, 438);
+		setBounds(100, 100, 1106, 809);
 		contentPane = new JPanel();
 
-		contentPane.setBackground(new Color(102, 215, 209));
-		contentPane.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(255, 248, 127)));
-
-		contentPane.setBackground(new Color(255, 255, 255));
+		contentPane.setBackground(new Color(255, 248, 127));
+		contentPane.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(255, 248, 127))); 	
 		contentPane.setBorder(new MatteBorder(1, 2, 1, 1, (Color) new Color(255, 102, 102)));
 
 
@@ -55,11 +55,6 @@ public class vistaPrincipal extends JFrame {
 		label = new JLabel("New label");
 		label.setBounds(563, 376, -91, -44);
 		contentPane.add(label);
-		
-		JPanel panel = new JPanel();
-		panel.setBackground(new Color(255, 69, 0));
-		panel.setBounds(517, 336, -108, 39);
-		contentPane.add(panel);
 		
 		JPanel header = new JPanel();
 		
@@ -77,9 +72,9 @@ public class vistaPrincipal extends JFrame {
 				 frame.setLocation(x-xMouse,y-yMouse); 
 			}
 		});
-		header.setBorder(null);
+		header.setBorder(new LineBorder(new Color(255, 99, 125), 2));
 		header.setBackground(new Color(255, 248, 127));
-		header.setBounds(0, 0, 679, 61);
+		header.setBounds(0, 0, 1106, 84);
 		contentPane.add(header);
 		header.setLayout(null);
 		
@@ -92,16 +87,30 @@ public class vistaPrincipal extends JFrame {
 			}
 			
 			public void mouseExited(MouseEvent e) {
-				boton_borrar.setBackground(new Color(255, 102, 102));
+				boton_borrar.setBackground(new Color(255, 248, 127));
 			}
 			
 			public void mouseClicked(MouseEvent e) {
 				System.exit(1);
 			}
 		});
-		boton_borrar.setBorder(null);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(102, 45, 1004, 39);
+		header.add(panel_1);
+		panel_1.setBackground(new Color(255, 99, 125));
+		panel_1.setLayout(null);
+		
+		JButton btnNewButton = new JButton("iniciar sesion/carrito");
+		btnNewButton.setBounds(760, 11, 234, 23);
+		panel_1.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("menu");
+		btnNewButton_1.setBounds(31, 11, 700, 23);
+		panel_1.add(btnNewButton_1);
+		boton_borrar.setBorder(new LineBorder(new Color(255, 99, 125), 2));
 		boton_borrar.setBackground(new Color(255, 248, 127));
-		boton_borrar.setBounds(632, 0, 47, 45);
+		boton_borrar.setBounds(1059, 0, 47, 49);
 		header.add(boton_borrar);
 		
 		JLabel xTexto = new JLabel("X");
@@ -109,13 +118,9 @@ public class vistaPrincipal extends JFrame {
 		boton_borrar.add(xTexto);
 		
 		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBorder(new LineBorder(new Color(255, 99, 125), 2));
 		lblNewLabel.setIcon(new ImageIcon(vistaPrincipal.class.getResource("/imagenes/logomerca.png")));
-		lblNewLabel.setBounds(0, 0, 109, 61);
+		lblNewLabel.setBounds(0, 0, 102, 84);
 		header.add(lblNewLabel);
-		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(76, 90, 537, 39);
-		contentPane.add(panel_1);
-		panel_1.setBackground(new Color(255, 99, 125));
 	}
 }
