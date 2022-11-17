@@ -27,6 +27,7 @@ public class vistaPrincipal extends JFrame {
 	static vistaPrincipal frame;
 
 
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -119,6 +120,7 @@ public class vistaPrincipal extends JFrame {
 		panel_1.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("menu");
+
 		btnNewButton_1.setBounds(31, 11, 700, 23);
 		panel_1.add(btnNewButton_1);
 		boton_borrar.setBorder(new LineBorder(new Color(255, 99, 125), 2));
@@ -135,5 +137,7 @@ public class vistaPrincipal extends JFrame {
 		lblNewLabel.setIcon(new ImageIcon(vistaPrincipal.class.getResource("/imagenes/logomerca.png")));
 		lblNewLabel.setBounds(0, 0, 102, 84);
 		header.add(lblNewLabel);
+		
+
 	}
 }

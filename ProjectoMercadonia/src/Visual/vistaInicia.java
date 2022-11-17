@@ -44,7 +44,7 @@ public class vistaInicia extends JFrame {
 	public vistaInicia() {
 		setUndecorated(true);
 		setResizable(false);
-		setBounds(100, 100, 613, 639);
+		setBounds(350, 200, 613, 639);
 		contentPane = new JPanel();
 
 		contentPane.setBackground(new Color(255, 248, 127));
