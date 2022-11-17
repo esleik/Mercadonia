@@ -1,4 +1,4 @@
-package Aplicacion;
+package Visual;
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -15,6 +15,8 @@ import javax.swing.border.MatteBorder;
 import javax.swing.ImageIcon;
 import javax.swing.border.LineBorder;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class vistaPrincipal extends JFrame {
 
@@ -102,6 +104,17 @@ public class vistaPrincipal extends JFrame {
 		panel_1.setLayout(null);
 		
 		JButton btnNewButton = new JButton("iniciar sesion/carrito");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				boolean inicio = false;
+				if(inicio == false) {
+				vistaInicia.abrir();
+				}
+				if(inicio == true ) {
+					
+				}
+			}
+		});
 		btnNewButton.setBounds(760, 11, 234, 23);
 		panel_1.add(btnNewButton);
 		
