@@ -20,22 +20,23 @@ public class Metodos_sql {
 	
 	
 	
-	public static String buscarNombre(String correo) {
+	public static String BuscarUsuarioRegistrado(String correo, String contraseña) {
 
-		String BusquedaNombre = null;
+		String busquedaUsuario = null;
 		Connection conexion = null;
-		try {
 
+		try {
 			conexion = ConexionSQL.conectar();
-			String sentenciaBuscar = ("SELECT nombreUsuario,ApellidoUsua FROM iniciosesion WHERE correo = '" + correo + "'");
-			sentenciaPreparada = conexion.prepareStatement(sentenciaBuscar);
+			String sentenciaBuscarUsuario = ("SELECT nombreUsuario,correo,contraseña FROM usuarios WHERE correo ='" + correo
+					+ "' && contraseña ='" + contraseña + "'");
+			sentenciaPreparada = conexion.prepareStatement(sentenciaBuscarUsuario);
 			resultado = sentenciaPreparada.executeQuery();
 
 			if (resultado.next()) {
 
-				String nombres = resultado.getString("nombres");
-				String apellidos = resultado.getString("apellidos");
-				BusquedaNombre = (nombres + " " + apellidos);
+				busquedaUsuario = "usuario encontrado";
+			} else {
+				busquedaUsuario = "usuario no existe";
 			}
 
 			conexion.close();
@@ -43,9 +44,8 @@ public class Metodos_sql {
 		} catch (Exception e) {
 
 			System.out.println(e);
-
 		}
-		return BusquedaNombre;
+		return busquedaUsuario;
 	}
 	
 	
