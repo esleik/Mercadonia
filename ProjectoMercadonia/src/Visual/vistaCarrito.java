@@ -129,7 +129,7 @@ public class vistaCarrito extends JFrame {
 				panel_1.setVisible(true);
 			}
 		});
-		btnNewButton_1.setBounds(31, 11, 700, 23);
+		btnNewButton_1.setBounds(10, 11, 700, 23);
 		panel_1.add(btnNewButton_1);
 		boton_borrar.setBorder(new LineBorder(new Color(255, 99, 125), 2));
 		boton_borrar.setBackground(new Color(255, 248, 127));
