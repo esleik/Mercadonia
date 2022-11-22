@@ -17,6 +17,8 @@ import javax.swing.border.LineBorder;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class vistaInicia extends JFrame {
 
@@ -27,6 +29,8 @@ public class vistaInicia extends JFrame {
 	static vistaInicia frame;
 	private JTextField textField;
 	private JTextField textField_1;
+	public static String nombre;
+	public static String contraseña;
 
 
 	public static void abrir() {
@@ -140,7 +144,17 @@ public class vistaInicia extends JFrame {
 		textField_1.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("No tengo una cuenta");
-		lblNewLabel_1.setBounds(152, 362, 150, 14);
+		lblNewLabel_1.setBounds(152, 362, 103, 14);
 		contentPane.add(lblNewLabel_1);
+		
+		JButton btnNewButton = new JButton("iniciar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				nombre = textField.getText();
+				contraseña = textField_1.getText();
+			}
+		});
+		btnNewButton.setBounds(402, 452, 89, 23);
+		contentPane.add(btnNewButton);
 	}
 }
