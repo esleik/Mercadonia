@@ -4,19 +4,18 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConexionSQL {
 	
 
-	public class ConexionPrimaria {
+	public class ConexionSQL {
 
-		public String url = "jdbc:mysql://localhost:3306/Mercadonia";
-		public String usuario = "root";
-		public String contraseña = "123456";
-		public String clase = "com.mysql.cj.jdbc.Driver";
-		private Connection conexion;
+		public static String url = "jdbc:mysql://localhost:3306/Mercadonia";
+		public static String usuario = "root";
+		public static String contraseña = "123456";
+		public static String clase = "com.mysql.cj.jdbc.Driver";
+		private static Connection conexion;
 
 		
-		public Connection conectar() throws ClassNotFoundException {
+		public static Connection conectar() throws ClassNotFoundException {
 
 			try {
 				Class.forName(clase);
@@ -32,4 +31,4 @@ public class ConexionSQL {
 
 		}
 	}
-}
+

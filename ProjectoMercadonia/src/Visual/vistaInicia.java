@@ -30,7 +30,7 @@ public class vistaInicia extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	public static String nombre;
-	public static String contraseña;
+	public static String contrasena;
 
 
 	public static void abrir() {
@@ -151,7 +151,7 @@ public class vistaInicia extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				nombre = textField.getText();
-				contraseña = textField_1.getText();
+				contrasena = textField_1.getText();
 			}
 		});
 		btnNewButton.setBounds(402, 452, 89, 23);
