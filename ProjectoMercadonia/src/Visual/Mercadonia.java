@@ -85,14 +85,52 @@ public class Mercadonia extends JFrame {
 		exit.setFont(new Font("Roboto Thin", Font.BOLD, 25));
 		exit.setHorizontalAlignment(SwingConstants.CENTER);
 		
-		JLabel lblNewLabel = new JLabel("logo");
-		lblNewLabel.setIcon(new ImageIcon(Mercadonia.class.getResource("/imagenes/prueba.png")));
-		lblNewLabel.setBounds(65, 44, 130, 27);
-		fondo.add(lblNewLabel);
+		JLabel logo = new JLabel("logo");
+		logo.setIcon(new ImageIcon(Mercadonia.class.getResource("/imagenes/prueba.png")));
+		logo.setBounds(45, 44, 130, 27);
+		fondo.add(logo);
 		
-		JLabel lblNewLabel_1 = new JLabel("mDes");
-		lblNewLabel_1.setIcon(new ImageIcon(Mercadonia.class.getResource("/imagenes/MdesplegableF.png")));
-		lblNewLabel_1.setBounds(30, 44, 25, 25);
-		fondo.add(lblNewLabel_1);
+		JLabel mDes = new JLabel("mDes");
+		mDes.setIcon(new ImageIcon(Mercadonia.class.getResource("/imagenes/MdesplegableF.png")));
+		mDes.setBounds(10, 44, 25, 25);
+		fondo.add(mDes);
+		
+		JPanel mDesp = new JPanel();
+		mDesp.setBackground(new Color(0, 82, 0));
+		mDesp.setBounds(0, 33, 195, 507);
+		fondo.add(mDesp);
+		mDesp.setLayout(null);
+		
+		JLabel mDes1 = new JLabel("mDes");
+		mDes1.setBounds(10, 11, 25, 25);
+		mDesp.add(mDes1);
+		
+		JLabel logo1 = new JLabel("logo");
+		logo1.setBounds(45, 10, 130, 27);
+		mDesp.add(logo1);
+		
+		JPanel sN = new JPanel();
+		sN.setBackground(new Color(78, 169, 59));
+		sN.setBounds(595, 44, 106, 36);
+		fondo.add(sN);
+		sN.setLayout(null);
+		
+		JLabel sn = new JLabel("Sobre nosotros");
+		sn.setBounds(0, 0, 106, 33);
+		sN.add(sn);
+		sn.setHorizontalAlignment(SwingConstants.CENTER);
+		sn.setFont(new Font("Roboto", Font.BOLD, 15));
+		
+		JPanel login = new JPanel();
+		login.setBackground(new Color(78, 169, 59));
+		login.setBounds(495, 44, 100, 36);
+		fondo.add(login);
+		login.setLayout(null);
+		
+		JLabel log = new JLabel("Login");
+		log.setBounds(0, 0, 100, 36);
+		login.add(log);
+		log.setFont(new Font("Roboto", Font.BOLD, 15));
+		log.setHorizontalAlignment(SwingConstants.CENTER);
 	}
 }
