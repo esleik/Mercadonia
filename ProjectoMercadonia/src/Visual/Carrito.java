@@ -8,14 +8,14 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import javax.swing.ImageIcon;
 
-public class Mercadonia extends JFrame {
+public class Carrito extends JFrame {
 
 	private JPanel fondo;
 	int xMouse, yMouse;
@@ -27,7 +27,7 @@ public class Mercadonia extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Mercadonia frame = new Mercadonia();
+					Carrito frame = new Carrito();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,7 +39,7 @@ public class Mercadonia extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Mercadonia() {
+	public Carrito() {
 		setBackground(new Color(128, 128, 128));
 		setResizable(false);
 		setUndecorated(true);
@@ -86,13 +86,21 @@ public class Mercadonia extends JFrame {
 		exit.setHorizontalAlignment(SwingConstants.CENTER);
 
 		JLabel logo = new JLabel("logo");
+		logo.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Mercadonia obj = new Mercadonia();
+				obj.setVisible(true);
+				dispose();
+			}
+		});
 		logo.setIcon(new ImageIcon(Mercadonia.class.getResource("/imagenes/prueba.png")));
 		logo.setBounds(45, 44, 130, 27);
 		fondo.add(logo);
 
 		JPanel mDesp = new JPanel();
 		mDesp.setBackground(new Color(0, 82, 0));
-		mDesp.setBounds(0, 33, 195, 507);
+		mDesp.setBounds(100, 33, 195, 507);
 		fondo.add(mDesp);
 		mDesp.setVisible(false);
 		mDesp.setLayout(null);
@@ -120,9 +128,17 @@ public class Mercadonia extends JFrame {
 		mDesp.add(mDes1);
 
 		JLabel logo1 = new JLabel("logo");
+		logo1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Mercadonia obj = new Mercadonia();
+				obj.setVisible(true);
+				dispose();
+			}
+		});
 		logo1.setBounds(45, 10, 130, 27);
 		mDesp.add(logo1);
-
+		
 		JPanel btnLogin = new JPanel();
 		btnLogin.addMouseListener(new MouseAdapter() {
 			@Override
@@ -227,9 +243,6 @@ public class Mercadonia extends JFrame {
 		login.add(log);
 		log.setFont(new Font("Roboto", Font.BOLD, 15));
 		log.setHorizontalAlignment(SwingConstants.CENTER);
-		
-		JLabel zonas = new JLabel("zonas");
-		zonas.setBounds(205, 146, 430, 242);
-		fondo.add(zonas);
 	}
+
 }

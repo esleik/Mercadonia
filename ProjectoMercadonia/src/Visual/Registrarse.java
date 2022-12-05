@@ -8,18 +8,25 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JSeparator;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import javax.swing.ImageIcon;
 
-public class Mercadonia extends JFrame {
+public class Registrarse extends JFrame {
 
 	private JPanel fondo;
+	private JTextField textField;
+	private JPasswordField passwordField;
 	int xMouse, yMouse;
-
+	private JTextField txtNombre;
+	private JTextField txtCiudad;
+	private JTextField txtDni;
 	/**
 	 * Launch the application.
 	 */
@@ -27,7 +34,7 @@ public class Mercadonia extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Mercadonia frame = new Mercadonia();
+					Registrarse frame = new Registrarse();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,7 +46,7 @@ public class Mercadonia extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Mercadonia() {
+	public Registrarse() {
 		setBackground(new Color(128, 128, 128));
 		setResizable(false);
 		setUndecorated(true);
@@ -86,13 +93,21 @@ public class Mercadonia extends JFrame {
 		exit.setHorizontalAlignment(SwingConstants.CENTER);
 
 		JLabel logo = new JLabel("logo");
+		logo.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Mercadonia obj = new Mercadonia();
+				obj.setVisible(true);
+				dispose();
+			}
+		});
 		logo.setIcon(new ImageIcon(Mercadonia.class.getResource("/imagenes/prueba.png")));
 		logo.setBounds(45, 44, 130, 27);
 		fondo.add(logo);
 
 		JPanel mDesp = new JPanel();
 		mDesp.setBackground(new Color(0, 82, 0));
-		mDesp.setBounds(0, 33, 195, 507);
+		mDesp.setBounds(100, 33, 195, 507);
 		fondo.add(mDesp);
 		mDesp.setVisible(false);
 		mDesp.setLayout(null);
@@ -120,6 +135,14 @@ public class Mercadonia extends JFrame {
 		mDesp.add(mDes1);
 
 		JLabel logo1 = new JLabel("logo");
+		logo1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Mercadonia obj = new Mercadonia();
+				obj.setVisible(true);
+				dispose();
+			}
+		});
 		logo1.setBounds(45, 10, 130, 27);
 		mDesp.add(logo1);
 
@@ -228,8 +251,137 @@ public class Mercadonia extends JFrame {
 		log.setFont(new Font("Roboto", Font.BOLD, 15));
 		log.setHorizontalAlignment(SwingConstants.CENTER);
 		
-		JLabel zonas = new JLabel("zonas");
-		zonas.setBounds(205, 146, 430, 242);
-		fondo.add(zonas);
+		JPanel lg = new JPanel();
+		lg.setLayout(null);
+		lg.setBackground(new Color(0, 82, 0));
+		lg.setBounds(226, 90, 270, 385);
+		fondo.add(lg);
+		
+		JLabel usuario = new JLabel("USUARIO");
+		usuario.setHorizontalAlignment(SwingConstants.LEFT);
+		usuario.setForeground(new Color(255, 128, 64));
+		usuario.setFont(new Font("Roboto", Font.PLAIN, 15));
+		usuario.setBounds(20, 11, 220, 20);
+		lg.add(usuario);
+		
+		JLabel cont = new JLabel("CONTRASEÑA");
+		cont.setHorizontalAlignment(SwingConstants.LEFT);
+		cont.setForeground(new Color(255, 128, 64));
+		cont.setFont(new Font("Roboto", Font.PLAIN, 15));
+		cont.setBounds(20, 73, 220, 20);
+		lg.add(cont);
+		
+		textField = new JTextField();
+		textField.setText("Ingrese su usuario");
+		textField.setForeground(new Color(128, 0, 0));
+		textField.setFont(new Font("Roboto", Font.PLAIN, 12));
+		textField.setColumns(10);
+		textField.setBorder(null);
+		textField.setBackground(new Color(78, 169, 59));
+		textField.setBounds(20, 42, 220, 20);
+		lg.add(textField);
+		
+		JSeparator separator = new JSeparator();
+		separator.setForeground(new Color(128, 0, 0));
+		separator.setBackground(new Color(128, 0, 0));
+		separator.setBounds(20, 63, 220, 20);
+		lg.add(separator);
+		
+		JSeparator separator_1 = new JSeparator();
+		separator_1.setForeground(new Color(128, 0, 0));
+		separator_1.setBackground(new Color(128, 0, 0));
+		separator_1.setBounds(20, 124, 220, 20);
+		lg.add(separator_1);
+		
+		passwordField = new JPasswordField();
+		passwordField.setText("+++++++++++++");
+		passwordField.setForeground(new Color(128, 0, 0));
+		passwordField.setEchoChar('*');
+		passwordField.setBorder(null);
+		passwordField.setBackground(new Color(78, 169, 59));
+		passwordField.setBounds(20, 104, 220, 20);
+		lg.add(passwordField);
+		
+		JLabel nombre = new JLabel("NOMBRE");
+		nombre.setHorizontalAlignment(SwingConstants.LEFT);
+		nombre.setForeground(new Color(255, 128, 64));
+		nombre.setFont(new Font("Roboto", Font.PLAIN, 15));
+		nombre.setBounds(20, 135, 220, 20);
+		lg.add(nombre);
+		
+		txtNombre = new JTextField();
+		txtNombre.setText("Ingrese su nombre");
+		txtNombre.setForeground(new Color(128, 0, 0));
+		txtNombre.setFont(new Font("Roboto", Font.PLAIN, 12));
+		txtNombre.setColumns(10);
+		txtNombre.setBorder(null);
+		txtNombre.setBackground(new Color(78, 169, 59));
+		txtNombre.setBounds(20, 166, 220, 20);
+		lg.add(txtNombre);
+		
+		JSeparator separator_2 = new JSeparator();
+		separator_2.setForeground(new Color(128, 0, 0));
+		separator_2.setBackground(new Color(128, 0, 0));
+		separator_2.setBounds(20, 186, 220, 20);
+		lg.add(separator_2);
+		
+		JLabel ciudad = new JLabel("CIUDAD");
+		ciudad.setHorizontalAlignment(SwingConstants.LEFT);
+		ciudad.setForeground(new Color(255, 128, 64));
+		ciudad.setFont(new Font("Roboto", Font.PLAIN, 15));
+		ciudad.setBounds(20, 197, 220, 20);
+		lg.add(ciudad);
+		
+		txtCiudad = new JTextField();
+		txtCiudad.setText("Ingrese su ciudad");
+		txtCiudad.setForeground(new Color(128, 0, 0));
+		txtCiudad.setFont(new Font("Roboto", Font.PLAIN, 12));
+		txtCiudad.setColumns(10);
+		txtCiudad.setBorder(null);
+		txtCiudad.setBackground(new Color(78, 169, 59));
+		txtCiudad.setBounds(20, 228, 220, 20);
+		lg.add(txtCiudad);
+		
+		JSeparator separator_2_1 = new JSeparator();
+		separator_2_1.setForeground(new Color(128, 0, 0));
+		separator_2_1.setBackground(new Color(128, 0, 0));
+		separator_2_1.setBounds(20, 249, 220, 20);
+		lg.add(separator_2_1);
+		
+		JLabel lblDni = new JLabel("DNI");
+		lblDni.setHorizontalAlignment(SwingConstants.LEFT);
+		lblDni.setForeground(new Color(255, 128, 64));
+		lblDni.setFont(new Font("Roboto", Font.PLAIN, 15));
+		lblDni.setBounds(20, 259, 220, 20);
+		lg.add(lblDni);
+		
+		txtDni = new JTextField();
+		txtDni.setText("Ingrese su DNI");
+		txtDni.setForeground(new Color(128, 0, 0));
+		txtDni.setFont(new Font("Roboto", Font.PLAIN, 12));
+		txtDni.setColumns(10);
+		txtDni.setBorder(null);
+		txtDni.setBackground(new Color(78, 169, 59));
+		txtDni.setBounds(20, 290, 220, 20);
+		lg.add(txtDni);
+		
+		JSeparator separator_2_1_1 = new JSeparator();
+		separator_2_1_1.setForeground(new Color(128, 0, 0));
+		separator_2_1_1.setBackground(new Color(128, 0, 0));
+		separator_2_1_1.setBounds(20, 310, 220, 20);
+		lg.add(separator_2_1_1);
+		
+		JPanel btnOkey = new JPanel();
+		btnOkey.setBounds(181, 341, 59, 21);
+		lg.add(btnOkey);
+		btnOkey.setLayout(null);
+		btnOkey.setBackground(new Color(78, 169, 59));
+		
+		JLabel lblOkey = new JLabel("OKEY");
+		lblOkey.setBounds(0, 0, 59, 21);
+		btnOkey.add(lblOkey);
+		lblOkey.setHorizontalAlignment(SwingConstants.CENTER);
+		lblOkey.setForeground(new Color(128, 0, 0));
+		lblOkey.setFont(new Font("Roboto", Font.PLAIN, 20));
 	}
 }
