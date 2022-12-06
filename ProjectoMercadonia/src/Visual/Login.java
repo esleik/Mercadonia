@@ -326,23 +326,6 @@ public class Login extends JFrame {
 		registro.setBounds(0, 0, 155, 25);
 		btnRegistrarse.add(registro);
 		
-		JPanel btnAdmin = new JPanel();
-		btnAdmin.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				LoginAdmin obj=new LoginAdmin();
-				obj.setVisible(true);
-				dispose();
-			}
-		});
-		btnAdmin.setLayout(null);
-		btnAdmin.setBackground(new Color(78, 169, 59));
-		btnAdmin.setBounds(226, 407, 155, 27);
-		fondo.add(btnAdmin);
 		
-		JLabel lblAdmin = new JLabel("Admin");
-		lblAdmin.setFont(new Font("Roboto", Font.BOLD, 12));
-		lblAdmin.setBounds(0, 0, 155, 25);
-		btnAdmin.add(lblAdmin);
 	}
 }

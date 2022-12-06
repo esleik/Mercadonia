@@ -328,12 +328,12 @@ public class Registrarse extends JFrame {
 		separator_2.setBounds(20, 186, 220, 20);
 		lg.add(separator_2);
 		
-		JLabel labelContraseña = new JLabel("CONTRASEÑA");
-		labelContraseña.setHorizontalAlignment(SwingConstants.LEFT);
-		labelContraseña.setForeground(new Color(255, 128, 64));
-		labelContraseña.setFont(new Font("Roboto", Font.PLAIN, 15));
-		labelContraseña.setBounds(20, 197, 220, 20);
-		lg.add(labelContraseña);
+		JLabel labelContrasena = new JLabel("CONTRASEÑA");
+		labelContrasena.setHorizontalAlignment(SwingConstants.LEFT);
+		labelContrasena.setForeground(new Color(255, 128, 64));
+		labelContrasena.setFont(new Font("Roboto", Font.PLAIN, 15));
+		labelContrasena.setBounds(20, 197, 220, 20);
+		lg.add(labelContrasena);
 		
 		txtApellido = new JTextField();
 		txtApellido.setText("Ingrese su apellido");

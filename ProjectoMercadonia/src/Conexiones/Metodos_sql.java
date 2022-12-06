@@ -70,12 +70,12 @@ public class Metodos_sql {
     }
 	}
 	
-	public static int guardar(String nombreUsuario, String apellidoUsua, String correo, String contraseña) {
+	public static int guardar(String nombreUsuario, String apellidoUsua, String correo, String contrasena) {
 
         int resultado = 0;
         Connection conexion = null;
 
-        String sentencia_guardar = ("INSERT INTO iniciosesion (nombreUsuario,apellidoUsua,correo,contraseña) VALUES(?,?,?,?)");
+        String sentencia_guardar = ("INSERT INTO iniciosesion (nombreUsuario,apellidoUsua,correo,contrasena) VALUES(?,?,?,?)");
 
         try {
     		System.out.println(usuario.nombreUsuario);
