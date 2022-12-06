@@ -18,15 +18,17 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import funciones.FuncionesRegistrarse;
+import funciones.usuario;
+
 public class Registrarse extends JFrame {
 
 	private JPanel fondo;
-	private JTextField textField;
-	private JPasswordField passwordField;
-	int xMouse, yMouse;
 	private JTextField txtNombre;
-	private JTextField txtCiudad;
-	private JTextField txtDni;
+	private JPasswordField txtPassword;
+	int xMouse, yMouse;
+	private JTextField txtCorreo;
+	private JTextField txtApellido;
 	/**
 	 * Launch the application.
 	 */
@@ -101,13 +103,13 @@ public class Registrarse extends JFrame {
 				dispose();
 			}
 		});
-		logo.setIcon(new ImageIcon(Mercadonia.class.getResource("/imagenes/prueba.png")));
+		logo.setIcon(new ImageIcon(Registrarse.class.getResource("/imagenes/LOGO.png")));
 		logo.setBounds(45, 44, 130, 27);
 		fondo.add(logo);
 
 		JPanel mDesp = new JPanel();
 		mDesp.setBackground(new Color(0, 82, 0));
-		mDesp.setBounds(100, 33, 195, 507);
+		mDesp.setBounds(0, 33, 195, 507);
 		fondo.add(mDesp);
 		mDesp.setVisible(false);
 		mDesp.setLayout(null);
@@ -125,6 +127,7 @@ public class Registrarse extends JFrame {
 		fondo.add(mDes);
 		
 		JLabel mDes1 = new JLabel("mDes");
+		mDes1.setIcon(new ImageIcon(Registrarse.class.getResource("/imagenes/MdesplegableF.png")));
 		mDes1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -254,32 +257,32 @@ public class Registrarse extends JFrame {
 		JPanel lg = new JPanel();
 		lg.setLayout(null);
 		lg.setBackground(new Color(0, 82, 0));
-		lg.setBounds(226, 90, 270, 385);
+		lg.setBounds(229, 91, 270, 323);
 		fondo.add(lg);
 		
-		JLabel usuario = new JLabel("USUARIO");
-		usuario.setHorizontalAlignment(SwingConstants.LEFT);
-		usuario.setForeground(new Color(255, 128, 64));
-		usuario.setFont(new Font("Roboto", Font.PLAIN, 15));
-		usuario.setBounds(20, 11, 220, 20);
-		lg.add(usuario);
+		JLabel labelNombre = new JLabel("NOMBRE");
+		labelNombre.setHorizontalAlignment(SwingConstants.LEFT);
+		labelNombre.setForeground(new Color(255, 128, 64));
+		labelNombre.setFont(new Font("Roboto", Font.PLAIN, 15));
+		labelNombre.setBounds(20, 11, 220, 20);
+		lg.add(labelNombre);
 		
-		JLabel cont = new JLabel("CONTRASEÑA");
-		cont.setHorizontalAlignment(SwingConstants.LEFT);
-		cont.setForeground(new Color(255, 128, 64));
-		cont.setFont(new Font("Roboto", Font.PLAIN, 15));
-		cont.setBounds(20, 73, 220, 20);
-		lg.add(cont);
+		JLabel labelApellido = new JLabel("APELLIDO");
+		labelApellido.setHorizontalAlignment(SwingConstants.LEFT);
+		labelApellido.setForeground(new Color(255, 128, 64));
+		labelApellido.setFont(new Font("Roboto", Font.PLAIN, 15));
+		labelApellido.setBounds(20, 73, 220, 20);
+		lg.add(labelApellido);
 		
-		textField = new JTextField();
-		textField.setText("Ingrese su usuario");
-		textField.setForeground(new Color(128, 0, 0));
-		textField.setFont(new Font("Roboto", Font.PLAIN, 12));
-		textField.setColumns(10);
-		textField.setBorder(null);
-		textField.setBackground(new Color(78, 169, 59));
-		textField.setBounds(20, 42, 220, 20);
-		lg.add(textField);
+		txtNombre = new JTextField();
+		txtNombre.setText("Ingrese su nombre");
+		txtNombre.setForeground(new Color(128, 0, 0));
+		txtNombre.setFont(new Font("Roboto", Font.PLAIN, 12));
+		txtNombre.setColumns(10);
+		txtNombre.setBorder(null);
+		txtNombre.setBackground(new Color(78, 169, 59));
+		txtNombre.setBounds(20, 42, 220, 20);
+		lg.add(txtNombre);
 		
 		JSeparator separator = new JSeparator();
 		separator.setForeground(new Color(128, 0, 0));
@@ -293,31 +296,31 @@ public class Registrarse extends JFrame {
 		separator_1.setBounds(20, 124, 220, 20);
 		lg.add(separator_1);
 		
-		passwordField = new JPasswordField();
-		passwordField.setText("+++++++++++++");
-		passwordField.setForeground(new Color(128, 0, 0));
-		passwordField.setEchoChar('*');
-		passwordField.setBorder(null);
-		passwordField.setBackground(new Color(78, 169, 59));
-		passwordField.setBounds(20, 104, 220, 20);
-		lg.add(passwordField);
+		txtPassword = new JPasswordField();
+		txtPassword.setText("+++++++++++++");
+		txtPassword.setForeground(new Color(128, 0, 0));
+		txtPassword.setEchoChar('*');
+		txtPassword.setBorder(null);
+		txtPassword.setBackground(new Color(78, 169, 59));
+		txtPassword.setBounds(20, 228, 220, 20);
+		lg.add(txtPassword);
 		
-		JLabel nombre = new JLabel("NOMBRE");
-		nombre.setHorizontalAlignment(SwingConstants.LEFT);
-		nombre.setForeground(new Color(255, 128, 64));
-		nombre.setFont(new Font("Roboto", Font.PLAIN, 15));
-		nombre.setBounds(20, 135, 220, 20);
-		lg.add(nombre);
+		JLabel labelCorreo = new JLabel("CORREO");
+		labelCorreo.setHorizontalAlignment(SwingConstants.LEFT);
+		labelCorreo.setForeground(new Color(255, 128, 64));
+		labelCorreo.setFont(new Font("Roboto", Font.PLAIN, 15));
+		labelCorreo.setBounds(20, 135, 220, 20);
+		lg.add(labelCorreo);
 		
-		txtNombre = new JTextField();
-		txtNombre.setText("Ingrese su nombre");
-		txtNombre.setForeground(new Color(128, 0, 0));
-		txtNombre.setFont(new Font("Roboto", Font.PLAIN, 12));
-		txtNombre.setColumns(10);
-		txtNombre.setBorder(null);
-		txtNombre.setBackground(new Color(78, 169, 59));
-		txtNombre.setBounds(20, 166, 220, 20);
-		lg.add(txtNombre);
+		txtCorreo = new JTextField();
+		txtCorreo.setText("Ingrese su correo");
+		txtCorreo.setForeground(new Color(128, 0, 0));
+		txtCorreo.setFont(new Font("Roboto", Font.PLAIN, 12));
+		txtCorreo.setColumns(10);
+		txtCorreo.setBorder(null);
+		txtCorreo.setBackground(new Color(78, 169, 59));
+		txtCorreo.setBounds(20, 166, 220, 20);
+		lg.add(txtCorreo);
 		
 		JSeparator separator_2 = new JSeparator();
 		separator_2.setForeground(new Color(128, 0, 0));
@@ -325,22 +328,22 @@ public class Registrarse extends JFrame {
 		separator_2.setBounds(20, 186, 220, 20);
 		lg.add(separator_2);
 		
-		JLabel ciudad = new JLabel("CIUDAD");
-		ciudad.setHorizontalAlignment(SwingConstants.LEFT);
-		ciudad.setForeground(new Color(255, 128, 64));
-		ciudad.setFont(new Font("Roboto", Font.PLAIN, 15));
-		ciudad.setBounds(20, 197, 220, 20);
-		lg.add(ciudad);
+		JLabel labelContraseña = new JLabel("CONTRASEÑA");
+		labelContraseña.setHorizontalAlignment(SwingConstants.LEFT);
+		labelContraseña.setForeground(new Color(255, 128, 64));
+		labelContraseña.setFont(new Font("Roboto", Font.PLAIN, 15));
+		labelContraseña.setBounds(20, 197, 220, 20);
+		lg.add(labelContraseña);
 		
-		txtCiudad = new JTextField();
-		txtCiudad.setText("Ingrese su ciudad");
-		txtCiudad.setForeground(new Color(128, 0, 0));
-		txtCiudad.setFont(new Font("Roboto", Font.PLAIN, 12));
-		txtCiudad.setColumns(10);
-		txtCiudad.setBorder(null);
-		txtCiudad.setBackground(new Color(78, 169, 59));
-		txtCiudad.setBounds(20, 228, 220, 20);
-		lg.add(txtCiudad);
+		txtApellido = new JTextField();
+		txtApellido.setText("Ingrese su apellido");
+		txtApellido.setForeground(new Color(128, 0, 0));
+		txtApellido.setFont(new Font("Roboto", Font.PLAIN, 12));
+		txtApellido.setColumns(10);
+		txtApellido.setBorder(null);
+		txtApellido.setBackground(new Color(78, 169, 59));
+		txtApellido.setBounds(20, 104, 220, 20);
+		lg.add(txtApellido);
 		
 		JSeparator separator_2_1 = new JSeparator();
 		separator_2_1.setForeground(new Color(128, 0, 0));
@@ -348,36 +351,24 @@ public class Registrarse extends JFrame {
 		separator_2_1.setBounds(20, 249, 220, 20);
 		lg.add(separator_2_1);
 		
-		JLabel lblDni = new JLabel("DNI");
-		lblDni.setHorizontalAlignment(SwingConstants.LEFT);
-		lblDni.setForeground(new Color(255, 128, 64));
-		lblDni.setFont(new Font("Roboto", Font.PLAIN, 15));
-		lblDni.setBounds(20, 259, 220, 20);
-		lg.add(lblDni);
-		
-		txtDni = new JTextField();
-		txtDni.setText("Ingrese su DNI");
-		txtDni.setForeground(new Color(128, 0, 0));
-		txtDni.setFont(new Font("Roboto", Font.PLAIN, 12));
-		txtDni.setColumns(10);
-		txtDni.setBorder(null);
-		txtDni.setBackground(new Color(78, 169, 59));
-		txtDni.setBounds(20, 290, 220, 20);
-		lg.add(txtDni);
-		
-		JSeparator separator_2_1_1 = new JSeparator();
-		separator_2_1_1.setForeground(new Color(128, 0, 0));
-		separator_2_1_1.setBackground(new Color(128, 0, 0));
-		separator_2_1_1.setBounds(20, 310, 220, 20);
-		lg.add(separator_2_1_1);
-		
 		JPanel btnOkey = new JPanel();
-		btnOkey.setBounds(181, 341, 59, 21);
+		btnOkey.setBounds(181, 280, 59, 21);
 		lg.add(btnOkey);
 		btnOkey.setLayout(null);
 		btnOkey.setBackground(new Color(78, 169, 59));
 		
 		JLabel lblOkey = new JLabel("OKEY");
+		lblOkey.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+
+				usuario.nombreUsuario = txtNombre.getText();
+				usuario.apellidoUsua = txtApellido.getText();
+				usuario.contrasena = txtPassword.getText();
+				usuario.correo = txtCorreo.getText();
+				FuncionesRegistrarse.guardar();
+			}
+		});
 		lblOkey.setBounds(0, 0, 59, 21);
 		btnOkey.add(lblOkey);
 		lblOkey.setHorizontalAlignment(SwingConstants.CENTER);

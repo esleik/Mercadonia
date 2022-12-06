@@ -94,7 +94,7 @@ public class Carrito extends JFrame {
 				dispose();
 			}
 		});
-		logo.setIcon(new ImageIcon(Mercadonia.class.getResource("/imagenes/prueba.png")));
+		logo.setIcon(new ImageIcon(Carrito.class.getResource("/imagenes/LOGO.png")));
 		logo.setBounds(45, 44, 130, 27);
 		fondo.add(logo);
 
@@ -113,7 +113,7 @@ public class Carrito extends JFrame {
 			}
 		});
 		mDes.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		mDes.setIcon(new ImageIcon(Mercadonia.class.getResource("/imagenes/MdesplegableF.png")));
+		mDes.setIcon(new ImageIcon(Carrito.class.getResource("/imagenes/MdesplegableF.png")));
 		mDes.setBounds(10, 44, 25, 25);
 		fondo.add(mDes);
 		

@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 		public static String url = "jdbc:mysql://localhost:3306/Mercadonia";
 		public static String usuario = "root";
-		public static String contraseña = "123456";
+		public static String contrasena = "123456";
 		public static String clase = "com.mysql.cj.jdbc.Driver";
 		private static Connection conexion;
 
@@ -19,7 +19,7 @@ import java.sql.SQLException;
 
 			try {
 				Class.forName(clase);
-				conexion = (Connection) DriverManager.getConnection(url, usuario, contraseña);
+				conexion = (Connection) DriverManager.getConnection(url, usuario, contrasena);
 
 				System.out.println("Conexion establecida");
 

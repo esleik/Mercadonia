@@ -86,7 +86,7 @@ public class Mercadonia extends JFrame {
 		exit.setHorizontalAlignment(SwingConstants.CENTER);
 
 		JLabel logo = new JLabel("logo");
-		logo.setIcon(new ImageIcon(Mercadonia.class.getResource("/imagenes/prueba.png")));
+		logo.setIcon(new ImageIcon(Mercadonia.class.getResource("/imagenes/LOGO.png")));
 		logo.setBounds(45, 44, 130, 27);
 		fondo.add(logo);
 
