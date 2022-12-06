@@ -4,6 +4,8 @@ public class funcionesInicia {
 	
 	public static void iniciar() {
 		
+		
+		
 	}
 
 }
