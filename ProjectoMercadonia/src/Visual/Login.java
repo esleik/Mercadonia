@@ -77,19 +77,19 @@ public class Login extends JFrame {
 		barra.setBounds(0, 0, 701, 33);
 		fondo.add(barra);
 		barra.setLayout(null);
-
-		JLabel exit = new JLabel("X");
-		exit.setForeground(new Color(0, 0, 0));
-		exit.setBounds(661, 0, 40, 33);
-		barra.add(exit);
-		exit.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		exit.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
-				System.exit(0);
-			}
-		});
-		exit.setFont(new Font("Roboto Thin", Font.BOLD, 25));
-		exit.setHorizontalAlignment(SwingConstants.CENTER);
+		
+				JLabel exit = new JLabel("X");
+				exit.setBounds(661, 0, 40, 33);
+				barra.add(exit);
+				exit.setForeground(new Color(0, 0, 0));
+				exit.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+				exit.addMouseListener(new MouseAdapter() {
+					public void mouseClicked(MouseEvent e) {
+						System.exit(0);
+					}
+				});
+				exit.setFont(new Font("Roboto Thin", Font.BOLD, 25));
+				exit.setHorizontalAlignment(SwingConstants.CENTER);
 
 		JLabel logo = new JLabel("logo");
 		logo.addMouseListener(new MouseAdapter() {
@@ -100,7 +100,7 @@ public class Login extends JFrame {
 				dispose();
 			}
 		});
-		logo.setIcon(new ImageIcon(Mercadonia.class.getResource("/imagenes/prueba.png")));
+		logo.setIcon(new ImageIcon(Login.class.getResource("/imagenes/LOGO.png")));
 		logo.setBounds(45, 44, 130, 27);
 		fondo.add(logo);
 

@@ -52,39 +52,6 @@ public class Mercadonia extends JFrame {
 		setContentPane(fondo);
 		fondo.setLayout(null);
 
-		JPanel barra = new JPanel();
-		barra.setBorder(null);
-		barra.addMouseMotionListener(new MouseMotionAdapter() {
-			public void mouseDragged(MouseEvent e) {
-				int x = e.getXOnScreen();
-				int y = e.getYOnScreen();
-				setLocation(x - xMouse, y - yMouse);
-			}
-		});
-		barra.addMouseListener(new MouseAdapter() {
-			public void mousePressed(MouseEvent e) {
-				xMouse = e.getX();
-				yMouse = e.getY();
-			}
-		});
-		barra.setBackground(new Color(0, 82, 0));
-		barra.setBounds(0, 0, 701, 33);
-		fondo.add(barra);
-		barra.setLayout(null);
-
-		JLabel exit = new JLabel("X");
-		exit.setForeground(new Color(0, 0, 0));
-		exit.setBounds(661, 0, 40, 33);
-		barra.add(exit);
-		exit.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		exit.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
-				System.exit(0);
-			}
-		});
-		exit.setFont(new Font("Roboto Thin", Font.BOLD, 25));
-		exit.setHorizontalAlignment(SwingConstants.CENTER);
-
 		JLabel logo = new JLabel("logo");
 		logo.setIcon(new ImageIcon(Mercadonia.class.getResource("/imagenes/LOGO.png")));
 		logo.setBounds(45, 44, 130, 27);
@@ -229,7 +196,57 @@ public class Mercadonia extends JFrame {
 		log.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JLabel zonas = new JLabel("zonas");
-		zonas.setBounds(205, 146, 430, 242);
+		zonas.setBounds(191, 166, 430, 242);
 		fondo.add(zonas);
+				
+						JPanel barra = new JPanel();
+						barra.setBorder(null);
+						barra.addMouseMotionListener(new MouseMotionAdapter() {
+							public void mouseDragged(MouseEvent e) {
+								int x = e.getXOnScreen();
+								int y = e.getYOnScreen();
+								setLocation(x - xMouse, y - yMouse);
+							}
+						});
+						barra.addMouseListener(new MouseAdapter() {
+							public void mousePressed(MouseEvent e) {
+								xMouse = e.getX();
+								yMouse = e.getY();
+							}
+						});
+						barra.setBackground(new Color(0, 82, 0));
+						barra.setBounds(0, 0, 701, 33);
+						fondo.add(barra);
+						barra.setLayout(null);
+						
+						JPanel panelCambiacolorX = new JPanel();
+						panelCambiacolorX.addMouseListener(new MouseAdapter() {
+							@Override
+							public void mouseEntered(MouseEvent e) {
+								
+								panelCambiacolorX.setBackground(new Color(214, 56, 14));
+								
+							}
+							@Override
+							public void mouseExited(MouseEvent e) {
+								
+								panelCambiacolorX.setBackground(new Color(0, 82, 0));
+								
+							}
+							@Override
+							public void mouseClicked(MouseEvent e) {
+								System.exit(0);
+							}
+						});
+						panelCambiacolorX.setBounds(670, 0, 31, 33);
+						barra.add(panelCambiacolorX);
+						panelCambiacolorX.setBackground(new Color(0, 82, 0));
+						panelCambiacolorX.setLayout(null);
+						
+						JLabel lblNewLabel_3 = new JLabel("X");
+						lblNewLabel_3.setBounds(0, 0, 31, 33);
+						panelCambiacolorX.add(lblNewLabel_3);
+						lblNewLabel_3.setFont(new Font("Dialog", Font.BOLD, 23));
+						lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 	}
 }

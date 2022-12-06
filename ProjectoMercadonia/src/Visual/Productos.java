@@ -94,7 +94,7 @@ public class Productos extends JFrame {
 				dispose();
 			}
 		});
-		logo.setIcon(new ImageIcon(Mercadonia.class.getResource("/imagenes/prueba.png")));
+		logo.setIcon(new ImageIcon(Productos.class.getResource("/imagenes/LOGO.png")));
 		logo.setBounds(45, 44, 130, 27);
 		fondo.add(logo);
 
@@ -128,6 +128,7 @@ public class Productos extends JFrame {
 		mDesp.add(mDes1);
 
 		JLabel logo1 = new JLabel("logo");
+		logo1.setIcon(new ImageIcon(Productos.class.getResource("/imagenes/LOGO.png")));
 		logo1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
